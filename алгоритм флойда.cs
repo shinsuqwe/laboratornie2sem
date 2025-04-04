@@ -1,7 +1,5 @@
-﻿/* Алгоритм Флойда */
-
+//Алгоритм Флойда
 using System;
-
 class Program
 {
     static double[,] Matrix(int n)
