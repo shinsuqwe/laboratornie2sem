@@ -1,4 +1,7 @@
-﻿using System;
+/* Дана база данных - телефонный справочник с ФИО, номером телефона (может быть
+несколько у одного человека), город, оператор связи, год подключения.
+Осуществить выборку по ФИО, оператору, номеру телефона. */
+using System;
 class Phone
 {
     private string _number;
@@ -27,12 +30,10 @@ class Person
     {
         get { return _name; } set { _name = value; }
     }
-
     public string City
     {
         get { return _city; } set { _city = value; }
     }
-
     public Phone[] Nums
     {
         get { return _numbers; } set { _numbers = value; }
