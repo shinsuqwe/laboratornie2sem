@@ -5,7 +5,6 @@
 которая позволит заполнять базу данных и делать выборку книг, которые не были на руках
 и книг, которые не сданы в библиотеку. */
 using System.Reflection.Metadata;
-
 struct Book
 {
     public string Author;
@@ -14,7 +13,6 @@ struct Book
     public string Publisher;
     public string Issue;
     public string Pass;
-
 }
 class Program
 {
