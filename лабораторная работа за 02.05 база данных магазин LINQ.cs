@@ -81,7 +81,6 @@ class Program
                         string articul = Console.ReadLine();
                         Console.Write($"Введите название товара {i + 1}: ");
                         string name = Console.ReadLine();
-
                         products.Add(new Product { Articul = articul, Name = name });
                     }
                     Console.Write("Товар(-ы) успешно дабавлен(-ы)!");
@@ -134,9 +133,7 @@ class Program
                                                        Balance = (from x in g where x.Status == "Пришло" select Convert.ToInt32(x.Qantity)).Sum()
                                                                - (from x in g where x.Status == "Продано" select Convert.ToInt32(x.Qantity)).Sum()
                                                    };
-
                                 int currentBalance = balanceQuery.FirstOrDefault()?.Balance ?? 0;
-
                                 if (currentBalance <= 0)
                                 {
                                     Console.WriteLine("Ошибка: нельзя продать товар — его остаток равен 0.");
@@ -188,7 +185,6 @@ class Program
                                             Date = g.Key,
                                             Items = g.ToList()
                                         };
-
                     foreach (var group in groupedByDate)
                     {
                         Console.WriteLine($"\nДата: {group.Date}");
@@ -201,7 +197,6 @@ class Program
 
                 case 6:
                     Console.WriteLine("\nГруппировка товаров по поставщику");
-
                     var groupedByProvider = from m in movement
                                             where m.Status == "Пришло"
                                             join p in providers on m.Id equals p.Id
@@ -229,7 +224,6 @@ class Program
                                                Article = g.Key,
                                                Movements = g.ToList()
                                            };
-
                     foreach (var group in groupedByArticle)
                     {
                         Console.WriteLine($"\nАртикул: {group.Article}");
